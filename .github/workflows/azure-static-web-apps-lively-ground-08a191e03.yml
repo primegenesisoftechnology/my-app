@@ -13,14 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.10'
+          registry-url: 'https://registry.npmjs.org/'
       - uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.17'
       - name: Install dependencies
         run: npm install
       - name: Build And Deploy
@@ -42,7 +43,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.17'
+          node-version: '20.10'
+          registry-url: 'https://registry.npmjs.org/'
       - name: Close Pull Request
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
