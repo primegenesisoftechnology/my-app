@@ -12,6 +12,7 @@ import Div5 from "./components/Div5";
 
 export default function Home() {
   const [actual, setActual] = useState('Wait ...');
+  const [vol,setvol]=useState('0');
   useEffect(() => {
     const livebtc = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@kline_1m");
 
@@ -22,6 +23,7 @@ export default function Home() {
     livebtc.addEventListener('message', (event) => {
       const klineData = JSON.parse(event.data);
       setActual(parseFloat(klineData.k.c).toFixed(2));
+      setvol(parseFloat(klineData.k.v).toFixed(2))
     });
 
     return () => {
@@ -38,7 +40,7 @@ export default function Home() {
           
           <div className="flex md:gap-8 gap-2 md:flex-row flex-col">
             <Timer /> 
-            <Div1 data={actual}/>
+            <Div1 data={actual} Volume={vol}/>
           </div>
           <br />
           <div className=" flex md:flex-row gap-2 flex-col md:gap-8 flex-wrap md:flex-nowrap md:-mt-0 -mt-4">
