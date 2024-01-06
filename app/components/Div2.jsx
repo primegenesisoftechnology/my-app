@@ -4,7 +4,7 @@ export default function Div2(props) {
   const [predictValue_1m, setPredictValue1] = React.useState("");
   const [Timeutc,setTimeutc]=React.useState();
   useEffect(() => {
-    const sse=new EventSource('http://localhost:5000/stream1m');
+    const sse=new EventSource('https://pred1.azurewebsites.net/stream1m');
     function handledata(e){
       var data1 = e.data;
       data1=data1.split('-');
@@ -18,7 +18,7 @@ export default function Div2(props) {
   }, []);
   console.log("1m : ",predictValue_1m)
   return (
-    <div className=" w-[260px] md:w-3/6 h-[90px] bg-lime-500 rounded-xl">
+    <div className=" w-[260px] md:w-3/6 h-[90px] md:h-[100px] bg-lime-500 rounded-xl">
       <div className="w-full flex items-center">
         <h1 className="pt-2 pl-5 font-bold md:text-[20px] text-[10px] text-white">Prediction-1m</h1>
         <h4 className=' relative top-1 left-20 pl-1 md:pl-0 md:left-48 md:text-[18px] text-[10px] font-semibold text-stone-50'>Next-In : {Timeutc}</h4>

@@ -1,11 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { io } from "socket.io-client";
 export default function Div3(props) {
   const [predictValue_5m, setPredictValue5] = useState("");
   const [Timeutc,setTimeutc]=React.useState();
   useEffect(() => {
-    const sse=new EventSource('http://localhost:5003/stream5m');
+    const sse=new EventSource('https://pred5.azurewebsites.net/stream5m');
     function handledata(e){
       var data1 = e.data;
       data1=data1.split('-');
@@ -19,7 +18,7 @@ export default function Div3(props) {
   }, []);
   console.log('5m : ',predictValue_5m)
   return (
-    <div className=" w-[260px] md:w-3/6 h-[90px] bg-indigo-900 rounded-xl">
+    <div className=" w-[260px] md:w-3/6 h-[90px] md:h-[100px] bg-indigo-900 rounded-xl">
       <div className="flex items-center w-full">
       <div className="w-full flex items-center">
         <h1 className="pt-2 pl-5 font-bold md:text-[20px] text-[10px] text-white">Prediction-5m</h1>

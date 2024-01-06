@@ -1,11 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import { io } from "socket.io-client";
 export default function Div5(props) {
   const [predictValue_15m, setPredictValue15] = useState("");
   const [Timeutc,setTimeutc]=React.useState();
   useEffect(() => {
-    const sse=new EventSource('http://localhost:5004/stream15m');
+    const sse=new EventSource('https://pred15.azurewebsites.net/stream15m');
     function handledata(e){
       var data1 = e.data;
       data1=data1.split('-');
@@ -19,11 +18,11 @@ export default function Div5(props) {
   }, []);
   console.log("15m: ",predictValue_15m)
   return (
-    <div className="w-[260px] md:w-3/6 h-[90px] bg-pink-700 rounded-xl">
+    <div className="w-[260px] md:w-3/6 h-[90px] md:h-[100px]  bg-pink-700 rounded-xl">
       <div className="flex items-center w-full">
       <div className="w-full flex items-center">
         <h1 className="pt-2 pl-5 font-bold md:text-[20px] text-[10px] text-white">Prediction-15m</h1>
-        <h4 className=' relative top-1 left-20 pl-1 md:pl-0 md:left-48 md:text-[18px] text-[10px] font-semibold text-stone-50'>Next-In : {Timeutc}</h4>
+        <h4 className='relative top-1 left-20 pl-1 md:pl-0 md:left-[11.5rem] md:text-[18px] text-[10px] font-semibold text-stone-50'>Next-In : {Timeutc}</h4>
       </div>
       </div>
       <div className="w-full h-full flex justify-center items-center gap-3">
