@@ -22,7 +22,7 @@ export default function Div3(props) {
       <div className="flex items-center w-full">
       <div className="w-full flex items-center">
         <h1 className="pt-2 pl-5 font-bold md:text-[20px] text-[10px] text-white">Prediction-3m</h1>
-        <h4 className=' relative top-1 left-20 pl-1 md:pl-0 md:left-48 md:text-[18px] text-[10px] font-semibold text-stone-50'>Next-In : {Timeutc}</h4>
+        <h4 className='relative top-1 left-[5rem] pl-1 md:pl-0 md:left-[11.8rem] md:text-[18px] text-[10px] font-semibold text-stone-50 w-40'>Next-In : <span className='w-10 md:text-[18px] text-[10px] font-semibold text-stone-50 bg-black bg-opacity-55 rounded p-[5px] pt-[1.5px] pb-[1.5px]'>{Timeutc}</span> </h4>
       </div>
       </div>
       <div className="w-full h-full flex justify-center items-center gap-3">

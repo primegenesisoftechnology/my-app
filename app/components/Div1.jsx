@@ -22,7 +22,7 @@ export default function Div1(props) {
       <div className="h-full flex justify-center items-center">
         <div>
          <h2 className="md:text-[50px] text-[20px] mb-10 text-white">{props.data}</h2>
-         <div className="text-yellow-500 font-medium md:text-[25px] text-[12px] relative pt-2 md:left-56 left-20 bottom-10 w-68 ">
+         <div className="text-yellow-500 font-medium md:text-[25px] text-[12px] relative pt-2 md:left-52 left-20 bottom-10 w-68 ">
            <h2>Volume : {props.Volume}</h2>
         </div>
         </div>
