@@ -10,7 +10,7 @@ import Div4 from "./components/Div4";
 import Image from "next/image";
 import Div5 from "./components/Div5";
 import Microsoft from './statics/images/RE1Mu3b.png';
-import Openai from './statics/images/Openai.svg';
+import Openai from './statics/images/openai.svg';
 export default function Home() {
   const [actual, setActual] = useState('Wait ...');
   const [vol,setvol]=useState('0');
