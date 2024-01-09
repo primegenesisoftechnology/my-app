@@ -53,7 +53,7 @@ export default function Home() {
             <Div4  actual={actual} />
             <Div5  actual={actual} />
           </div>
-          <div className="w-full p-2 text-center dark:bg-neutral-700 ">
+          <div className="w-full p-2 text-center">
               <span className="text-[12px]">Official Partners</span>
               <div className="w-full flex justify-center items-center md:flex-row flex-col  md:pt-0 ">
               <div className=" w-full flex gap-2 p-1 items-center justify-center">
