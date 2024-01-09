@@ -37,25 +37,24 @@ export default function Home() {
       <Navbar />
       <div className="flex md:w-full md:h-full w-screen md:gap-1">
         <Sidebar />
-        <div className="p-2 flex flex-col relative md:left-16 md:top-10 left-2">
-          
-          <div className="flex md:gap-8 gap-2 md:flex-row flex-col">
+        <div className="p-2 flex flex-col relative md:left-16 md:top-10 left-2">  
+          <div className="flex md:gap-8 gap-4 md:flex-row flex-col">
             <Timer /> 
             <Div1 data={actual} Volume={vol}/>
           </div>
           <br />
-          <div className=" flex md:flex-row gap-2 flex-col md:gap-8 flex-wrap md:flex-nowrap md:-mt-0 -mt-4">
+          <div className=" flex md:flex-row gap-4 flex-col md:gap-8 flex-wrap md:flex-nowrap md:-mt-0 -mt-2">
             <Div2  actual={actual} />
             <Div3  actual={actual} />
           </div>
           <br />
-          <div className="flex md:flex-row gap-2 flex-col md:gap-8 flex-wrap md:flex-nowrap md:-mt-0 -mt-4">
+          <div className="flex md:flex-row gap-4 flex-col md:gap-8 flex-wrap md:flex-nowrap md:-mt-0 -mt-2">
             <Div4  actual={actual} />
             <Div5  actual={actual} />
           </div>
-          <div className="w-full p-2 text-center">
+          <div className="w-full p-2 text-center bg-transparent">
               <span className="text-[12px]">Official Partners</span>
-              <div className="w-full flex justify-center items-center md:flex-row flex-col  md:pt-0 ">
+              <div className="w-full flex justify-center items-center md:flex-row flex-col md:pt-0 ">
               <div className=" w-full flex gap-2 p-1 items-center justify-center">
               <Image src={Microsoft} alt="logo-pgot" width={120} height={120} />
               </div>
