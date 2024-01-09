@@ -11,7 +11,6 @@ export default function Navbar() {
             <span className="text-[27px] -mt-2">PGOT</span>
             <p className="text-[18px] -mt-2 text-yellow-400">Prime Genesis of Technology</p>
             </div>
-            
         </div>
     </div>
   )

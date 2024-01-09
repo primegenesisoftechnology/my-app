@@ -2,7 +2,7 @@
 import React, { useEffect} from 'react';
 export default function Div2(props) {
   const [predictValue_1m, setPredictValue1] = React.useState("");
-  const [Timeutc,setTimeutc]=React.useState();
+  const [Timeutc,setTimeutc]=React.useState("");
   useEffect(() => {
     const sse=new EventSource('https://pred1.azurewebsites.net/stream1m');
     function handledata(e){
@@ -21,7 +21,7 @@ export default function Div2(props) {
     <div className=" w-[260px] md:w-3/6 h-[90px] md:h-[100px] bg-lime-500 rounded-xl">
       <div className="w-full flex items-center">
         <h1 className="pt-2 pl-5 font-bold md:text-[20px] text-[10px] text-white">Prediction-1m</h1>
-        <h4 className='relative top-1 left-[5rem] pl-1 md:pl-0 md:left-[11.8rem] md:text-[18px] text-[10px] font-semibold text-stone-50 w-40'>Next-In : <span className='w-10 md:text-[18px] text-[10px] font-semibold text-stone-50 bg-black bg-opacity-55 rounded p-[6px] pt-[1.5px] pb-[1.5px]'>{Timeutc}</span> </h4>
+        <h4 className='relative top-1 left-[5rem] pl-1 md:pl-0 md:left-[11.8rem] md:text-[18px] text-[10px] font-semibold text-stone-50 w-40'>Next-In : {Timeutc != "" ? <span className='w-10 md:text-[18px] text-[10px] font-semibold text-stone-50 bg-black bg-opacity-75 rounded p-[5px] pt-[1.5px] pb-[1.5px]'>{Timeutc}</span> : <span></span>}</h4>
       </div>
       <div className="w-full h-full flex justify-center items-center gap-3">
         <h2 className="md:text-[30px] text-[20px] -mt-10 text-white">{predictValue_1m != "" ? predictValue_1m : "Wait ..."}</h2>
